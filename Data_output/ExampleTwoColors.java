@@ -1,4 +1,4 @@
-public class colors {
+public class ExampleTwoColors {
     public static void main(String[] args)
     {
         //ANSI Escape codes

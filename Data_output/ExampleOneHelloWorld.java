@@ -1,5 +1,5 @@
 // Principal class
-public class Example1HelloWorld {
+public class ExampleOneHelloWorld {
     public static void main(String[] args) {
         System.out.print("Hello, World! (Without line break)");
         System.out.print("\n");
