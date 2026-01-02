@@ -1,23 +1,32 @@
 public class ExampleTwoColors {
     public static void main(String[] args)
     {
-        //ANSI Escape codes
-        //Colors
-        String red = "\033[31m";
-        String green = "\033[32m";
-        String orange = "\033[33m";
-        String blue = "\033[34m";
-        String purple = "\033[35m";
-        String white = "\033[37m";
-        //Reset
-        String reset = "\033[0m";
+        //ANSI escape sequences
+        String ESC = "\033";
+        char CSI = '[';
+        char graphic_attribute = 'm';
         
-        //Texts
+
+        //Color codes
+        char reset = '0';
+        String red = "31";
+        String green = "32";
+        String orange = "33";
+        String blue = "34";
+        String purple = "35";
+        
+        //Text variables
         String text_1 = "D-A-N-G-E-R-!";
-        String text_2 = "This code is experimental.";
-        String text_3 = "Be careful";
-        System.out.println(red + text_1 + reset);
-        System.out.print(orange + text_2);
-        System.out.println(" " + text_3 + " " + blue + "and be quiet...");
+        String text_2 = "This code is for testing purposes. Therefore, it's experimental.";
+        String text_3 = "Its purpose is to understand ANSI escape sequences.";
+        String text_4 = "Be careful...";
+
+        //Output
+        System.out.println(ESC + CSI + red + graphic_attribute + text_1);
+        System.out.println(ESC + CSI + orange + graphic_attribute + text_2 + ESC + CSI + green + graphic_attribute);
+        System.out.println(text_3);
+        System.out.print(ESC + CSI + purple + graphic_attribute);
+        System.out.println(text_4 + " " + ESC + CSI + blue  + graphic_attribute + "and be quiet...");
+        System.out.println(ESC + CSI + reset + graphic_attribute + "See you later!");
     }
 }
