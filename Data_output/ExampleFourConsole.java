@@ -1,7 +1,7 @@
 //Imports
 import java.io.Console;
 
-public class ExampleFour{
+public class ExampleFourConsole{
     public static void main(String[] args){
         Console console = System.console(); //Create a console object
         
