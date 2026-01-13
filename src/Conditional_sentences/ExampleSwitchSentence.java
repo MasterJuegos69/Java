@@ -14,32 +14,37 @@ public class ExampleSwitchSentence{
     byte minutes = Byte.parseByte(cnsl.readLine());
 
     //Processing
+    short elapsedTime = 24 * 60;
+    
+    //Constants
+    short weekEnd = (24 * 4 + 15) * 60; 
+
+    //Unit conversion
     short timeInMinutes = (short) (hour * 60);
     timeInMinutes += minutes;
-     
+    
     switch (weekDay) {
         case "Lunes":
-            timeInMinutes += 0;
+            elapsedTime *= 0;
             break;
         case "Martes":
-            timeInMinutes += 24 * 60 * 1;
+            elapsedTime *= 1;
             break;
         case "Miércoles":
-            timeInMinutes += 24 * 60 * 2;
+            elapsedTime *= 2;
             break;
         case "Jueves":
-            timeInMinutes += 24 * 60 * 3;
+            elapsedTime *= 3;
             break;
         case "Viernes":
-            timeInMinutes += 24 * 60 * 4;
+            elapsedTime *= 4;
             break;
         default:
             System.out.println("ERROR: The day of the week entered is out of range.");
             break;
     }
-
-    short weekEnd = (24 * 4 + 15) * 60;
-    short remainingMinutes = (short) (weekEnd - timeInMinutes);
+    elapsedTime += timeInMinutes;
+    short remainingMinutes = (short) (weekEnd - elapsedTime);
 
     //Output
     System.out.println("Only " + remainingMinutes + " minutes left until the weekend.");
