@@ -6,10 +6,10 @@ public class ExampleDoWhile{
         Console cnsl = System.console();
 
         //Input
-        short userCombination;
+        String userCombination;
 
         //Processing
-        final short SYSTEM_COMBINATION = 1234;
+        final String SYSTEM_COMBINATION = "1234";
         final byte OPPORTUNITIES = 4;
         byte attempts = 1;
         boolean condition;
@@ -21,8 +21,8 @@ public class ExampleDoWhile{
         String FINAL_MESSAGE = MAX_ATTEMPTS_REACHED;
         do{
             System.out.print("\n" + "Enter a 4-digit number: ");
-            userCombination = Short.parseShort(cnsl.readLine());  
-            condition = userCombination != SYSTEM_COMBINATION;
+            userCombination = cnsl.readLine();  
+            condition = !userCombination.equals(SYSTEM_COMBINATION);
             if(condition){
                 System.out.println(WRONG_COMBINATION);
                 attempts = (byte) (attempts + 1);
